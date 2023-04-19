@@ -56,7 +56,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/code-cookbook/code-cookbook.github.io/tree/main/recipes/',
+            'https://github.com/code-cookbook/code-cookbook.github.io/tree/main/',
         },
         // blog: {
         //   showReadingTime: true,
@@ -76,7 +76,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig|import('@docusaurus/theme-mermaid').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/codecookbook-social-card.jpg',
       navbar: {
         title: 'Code Cookbook',
         logo: {
