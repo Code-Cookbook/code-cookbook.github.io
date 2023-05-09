@@ -47,17 +47,17 @@ Because this now means a user can log in with several different methods, some ad
 
 ### Screens
 
-| Name      | Path   | Description                                                                           |
-| --------- | ------ | ------------------------------------------------------------------------------------- |
-| Login     | /login | Displays the social sign in buttons and redirects to the social provider login screen |
-| Dashboard | `/`    | Only accessible if the user has a valid JWT issued. Fetches data from `GET /me`       |
+| Name      | Path     | Description                                                                           |
+| --------- | -------- | ------------------------------------------------------------------------------------- |
+| Login     | `/login` | Displays the social sign in buttons and redirects to the social provider login screen |
+| Dashboard | `/`      | Only accessible if the user has a valid JWT issued. Fetches data from `GET /me`       |
 
 ### Endpoints
 
-| Method | Path         | Description                                                   |
-| ------ | ------------ | ------------------------------------------------------------- |
-| POST   | /auth/social | Verifies the token from the social provider and issues a JWT. |
-| GET    | `/me`        | Returns the current user's details, only if logged in         |
+| Method | Path          | Description                                                   |
+| ------ | ------------- | ------------------------------------------------------------- |
+| POST   | `/auth/token` | Verifies the token from the social provider and issues a JWT. |
+| GET    | `/me`         | Returns the current user's details, only if logged in         |
 
 ### Tables
 
@@ -76,7 +76,7 @@ erDiagram
 
 ## Method
 
-### Login page
+### Login Screen
 
 The login page typically uses one of the social provider's Javascript SDKs
 
@@ -101,20 +101,25 @@ sequenceDiagram
     Note right of Frontend: Browser stores token in cookie
 ```
 
-### Social Endpoint
+### Token Endpoint
 
-The `POST /auth/social` endpoint accepts the token issued by the social provider and returns a JSON web token (JWT) which should be stored by the client for subsequent requests.
+The `POST /auth/token` endpoint accepts the token issued by the social provider and returns a JSON web token (JWT) which should be stored by the client for subsequent requests.
 
 #### Request Body
 
 ```json
 {
-  "provider": "google",
-  "token": {
-    "clientId": "719961940556-....apps.googleusercontent.com",
-    "client_id": "719961940556-....apps.googleusercontent.com",
-    "credential": "eyJhbGciOiJSUzI1NiIsImtpZ...eZv73XtATkZqlEN8z42_Yv4Xr8PwvvnzxKj7NzPkjgNwxvZHL88ari9Sg",
-    "select_by": "btn"
+  "data": {
+    "type: "credentials",
+    "attributes": {
+      "provider": "google",
+      "token": {
+        "clientId": "719961940556-....apps.googleusercontent.com",
+        "client_id": "719961940556-....apps.googleusercontent.com",
+        "credential": "eyJhbGciOiJSUzI1NiIsImtpZ...eZv73XtATkZqlEN8z42_Yv4Xr8PwvvnzxKj7NzPkjgNwxvZHL88ari9Sg",
+        "select_by": "btn"
+      }
+    }
   }
 }
 ```
@@ -138,17 +143,7 @@ sequenceDiagram
 
 ```json
 {
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": {
-    {
-      "id": 1234,
-      "firstName": "Fred",
-      "lastName": "Smith",
-      "email": "fred@codecookbook.io",
-      "createdAt": "2023-04-12T20:07:22.115Z",
-      "updatedAt": "2023-04-12T20:07:22.115Z"
-    }
-  }
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
 

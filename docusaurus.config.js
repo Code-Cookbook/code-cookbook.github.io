@@ -90,7 +90,7 @@ const config = {
             position: 'left',
             label: 'Recipes',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/recipes/standards', label: 'Standards', position: 'left' },
           {
             href: 'https://github.com/code-cookbook/code-cookbook.github.io',
             label: 'GitHub',
@@ -143,7 +143,7 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Code Cookbook. Built with Docusaurus.`,
       },
-      
+
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
