@@ -92,6 +92,7 @@ const config = {
             label: 'Recipes',
           },
           { to: '/recipes/standards', label: 'Standards', position: 'left' },
+          { to: '/feedback', label: 'Feedback', position: 'left' },
           {
             href: 'https://github.com/code-cookbook/code-cookbook.github.io',
             label: 'GitHub',
@@ -114,18 +115,22 @@ const config = {
           {
             title: 'Community',
             items: [
+              // {
+              //   label: 'Stack Overflow',
+              //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              // },
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Discussions',
+                href: 'https://github.com/Code-Cookbook/code-cookbook.github.io/discussions',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Recipe Requests',
+                href: 'https://code-cookbook.canny.io/recipe-requests/',
               },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+              // {
+              //   label: 'Twitter',
+              //   href: 'https://twitter.com/docusaurus',
+              // },
             ],
           },
           {
@@ -150,7 +155,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       mermaid: {
-        theme: { light: 'base', dark: 'base' },
+        theme: { light: 'base', dark: 'dark' },
       },
     }),
 };
