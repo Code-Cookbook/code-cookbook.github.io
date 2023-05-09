@@ -11,7 +11,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   scripts: [
-    'https://gumroad.com/js/gumroad-embed.js'
+    // 'https://gumroad.com/js/gumroad-embed.js',
+    // 'https://gumroad.com/js/gumroad.js',
   ],
 
   // Set the production url of your site here
