@@ -50,6 +50,9 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        googleTagManager: {
+          containerId: 'GTM-WBW5PQ6',
+        },
         docs: {
           path: 'recipes',
           routeBasePath: 'recipes',
